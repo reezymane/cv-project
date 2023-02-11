@@ -22,12 +22,26 @@ class App extends Component {
         id: uniqid()
       }
     };
+
+    this.handleNameChange = this.handleNameChange.bind(this);
+  };
+
+  handleNameChange = (newName) => {
+    this.setState({
+      name: {
+        text: newName,
+        id: this.state.name.id
+      }
+    })
   };
   
   render() {
     return (
       <div className="App">
-        <GeneralInfo info={this.state}/>
+        <GeneralInfo
+        info={this.state}
+        onNameChange={this.handleNameChange}
+        />
         <Educational />
         <WorkHistory />
       </div>
