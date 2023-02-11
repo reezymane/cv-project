@@ -25,6 +25,7 @@ class App extends Component {
 
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
+    this.handlePhoneChange = this.handlePhoneChange.bind(this);
   };
 
   handleNameChange = (newName) => {
@@ -44,6 +45,15 @@ class App extends Component {
       }
     })
   };
+
+  handlePhoneChange = (newPhone) => {
+    this.setState({
+      phone: {
+        text: newPhone,
+        id: this.state.phone.id
+      }
+    })
+  };
   
   render() {
     return (
@@ -52,6 +62,7 @@ class App extends Component {
         info={this.state}
         onNameChange={this.handleNameChange}
         onEmailChange={this.handleEmailChange}
+        onPhoneChange={this.handlePhoneChange}
         />
         <Educational />
         <WorkHistory />
