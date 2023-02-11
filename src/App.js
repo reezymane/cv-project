@@ -24,6 +24,7 @@ class App extends Component {
     };
 
     this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleEmailChange = this.handleEmailChange.bind(this);
   };
 
   handleNameChange = (newName) => {
@@ -34,6 +35,15 @@ class App extends Component {
       }
     })
   };
+
+  handleEmailChange = (newEmail) => {
+    this.setState({
+      email: {
+        text: newEmail,
+        id: this.state.email.id
+      }
+    })
+  };
   
   render() {
     return (
@@ -41,6 +51,7 @@ class App extends Component {
         <GeneralInfo
         info={this.state}
         onNameChange={this.handleNameChange}
+        onEmailChange={this.handleEmailChange}
         />
         <Educational />
         <WorkHistory />
