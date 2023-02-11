@@ -7,6 +7,7 @@ export default class GeneralInfo extends Component {
         this.handleNameChange = this.handleNameChange.bind(this);
         this.handleEmailChange = this.handleEmailChange.bind(this);
         this.handlePhoneChange = this.handlePhoneChange.bind(this);
+        this.onSubmitInfo = this.onSubmitInfo.bind(this);
     };
 
     handleNameChange = (event) => {
@@ -21,22 +22,38 @@ export default class GeneralInfo extends Component {
         this.props.handlePhoneChange(event.target.value);
     };
 
+    onSubmitInfo = () => {};
+
     render() {
     const {info} = this.props;
 
         return (
-            <form>
+            <form onSubmit={this.onSubmitInfo}>
                 <label htmlFor='name'>Name:</label><br />
-                <input type='text' id='name' onChange={this.handleNameChange} value={info.name.text}></input><br />
+                <input
+                 type='text'
+                 id='name'
+                 onChange={this.handleNameChange}
+                 value={info.name.text}
+                /><br />
 
                 <label htmlFor='email'>Email:</label><br />
-                <input type='email' id='email' onChange={this.handleEmailChange} value={info.email.text}></input><br />
+                <input
+                 type='email'
+                 id='email' 
+                 onChange={this.handleEmailChange}
+                 value={info.email.text}
+                /><br />
 
                 <label htmlFor='phone'>Phone:</label><br />
-                <input type='phone' id='phone' onChange={this.handlePhoneChange} value={info.phone.text}></input><br />
+                <input type='phone'
+                 id='phone'
+                 onChange={this.handlePhoneChange}
+                 value={info.phone.text}
+                /><br />
 
-                <button>Submit</button>
-                <button>Edit</button>
+                <button type='submit'>Submit</button>
+                <button type='button'>Edit</button>
             </form>
         );
     };
