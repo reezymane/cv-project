@@ -5,10 +5,15 @@ export default class GeneralInfo extends Component {
         super(props);
 
         this.handleNameChange = this.handleNameChange.bind(this);
+        this.handleEmailChange = this.handleEmailChange.bind(this);
     };
 
     handleNameChange = (event) => {
         this.props.onNameChange(event.target.value);
+    };
+
+    handleEmailChange = (event) => {
+        this.props.handleEmailChange(event.target.value);
     };
 
     render() {
@@ -20,7 +25,7 @@ export default class GeneralInfo extends Component {
                 <input type='text' id='name' onChange={this.handleNameChange} value={info.name.text}></input><br />
 
                 <label htmlFor='email'>Email:</label><br />
-                <input type='email' id='email' value={info.email.text}></input><br />
+                <input type='email' id='email' onChange={this.handleEmailChange} value={info.email.text}></input><br />
 
                 <label htmlFor='phone'>Phone:</label><br />
                 <input type='phone' id='phone' value={info.phone.text}></input><br />
