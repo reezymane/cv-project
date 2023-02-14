@@ -60,7 +60,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <div className='Forms'>
+        <div className='GeneralFormAndInfo'>
           <form className='GeneralForm' onSubmit={this.onSubmitInfo}>
             <label htmlFor='name'>Name:</label><br />
               <input
@@ -89,23 +89,26 @@ class App extends Component {
               <button type='button'>Edit</button>
           </form>
 
+          <GeneralInfo />
+        </div>
+
+        <div className='EducationalFormAndInfo'>
           <form className='EducationalForm'>
               <button>Submit</button>
               <button>Edit</button>
           </form>
 
+          <Educational />
+        </div>
+
+        <div className='WorkHistoryFormAndInfo'>
           <form className='WorkHistoryForm'>
               <button>Submit</button>
               <button>Edit</button>
           </form>
-        </div>
-        
-        <div className='displayInfo'>
-          <GeneralInfo />
-          <Educational />
+
           <WorkHistory />
         </div>
-        
       </div>
     );
   };
