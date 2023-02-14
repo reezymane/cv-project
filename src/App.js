@@ -28,44 +28,84 @@ class App extends Component {
     this.handlePhoneChange = this.handlePhoneChange.bind(this);
   };
 
-  handleNameChange = (newName) => {
+  handleNameChange = (event) => {
     this.setState({
       name: {
-        text: newName,
+        text: event.target.value,
         id: this.state.name.id
       }
     })
   };
 
-  handleEmailChange = (newEmail) => {
+  handleEmailChange = (event) => {
     this.setState({
       email: {
-        text: newEmail,
+        text: event.target.value,
         id: this.state.email.id
       }
     })
   };
 
-  handlePhoneChange = (newPhone) => {
+  handlePhoneChange = (event) => {
     this.setState({
       phone: {
-        text: newPhone,
+        text: event.target.value,
         id: this.state.phone.id
       }
     })
   };
   
   render() {
+    const {name, email, phone} = this.state;
+
     return (
       <div className="App">
-        <GeneralInfo
-        info={this.state}
-        onNameChange={this.handleNameChange}
-        onEmailChange={this.handleEmailChange}
-        onPhoneChange={this.handlePhoneChange}
-        />
-        <Educational />
-        <WorkHistory />
+        <div className='Forms'>
+          <form className='GeneralForm' onSubmit={this.onSubmitInfo}>
+            <label htmlFor='name'>Name:</label><br />
+              <input
+               type='text'
+               id='name'
+               onChange={this.handleNameChange}
+               value={name.text}
+              /><br />
+
+              <label htmlFor='email'>Email:</label><br />
+              <input
+               type='email'
+               id='email' 
+               onChange={this.handleEmailChange}
+               value={email.text}
+              /><br />
+
+              <label htmlFor='phone'>Phone:</label><br />
+              <input type='phone'
+               id='phone'
+               onChange={this.handlePhoneChange}
+               value={phone.text}
+              /><br />
+
+              <button type='submit'>Submit</button>
+              <button type='button'>Edit</button>
+          </form>
+
+          <form className='EducationalForm'>
+              <button>Submit</button>
+              <button>Edit</button>
+          </form>
+
+          <form className='WorkHistoryForm'>
+              <button>Submit</button>
+              <button>Edit</button>
+          </form>
+        </div>
+        
+        <div className='displayInfo'>
+          <GeneralInfo />
+          <Educational />
+          <WorkHistory />
+        </div>
+        
       </div>
     );
   };

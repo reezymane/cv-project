@@ -7,10 +7,9 @@ export default class Educational extends Component {
 
     render() {
         return (
-            <form>
-                <button>Submit</button>
-                <button>Edit</button>
-            </form>
+            <div>
+                
+            </div>
         );
     };
 };
