@@ -104,7 +104,7 @@ class App extends Component {
               <button type='button'>Edit</button>
           </form>
 
-          <GeneralInfo />
+          <GeneralInfo name={name} email={email} phone={phone}/>
         </div>
 
         <div className='EducationalFormAndInfo'>
