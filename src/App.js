@@ -54,6 +54,21 @@ class App extends Component {
       }
     })
   };
+
+  onGeneralSubmit = (event) => {
+    event.preventDefault();
+    this.setState({
+      name: {
+        id: uniqid()
+      },
+      email: {
+        id: uniqid()
+      },
+      phone: {
+        id: uniqid()
+      }
+    });
+  };
   
   render() {
     const {name, email, phone} = this.state;
@@ -61,7 +76,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className='GeneralFormAndInfo'>
-          <form className='GeneralForm' onSubmit={this.onSubmitInfo}>
+          <form className='GeneralForm' onSubmit={this.onGeneralSubmit}>
             <label htmlFor='name'>Name:</label><br />
               <input
                type='text'
