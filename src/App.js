@@ -59,12 +59,15 @@ class App extends Component {
     event.preventDefault();
     this.setState({
       name: {
+        text: this.state.name.text,
         id: uniqid()
       },
       email: {
+        text: this.state.email.text,
         id: uniqid()
       },
       phone: {
+        text: this.state.phone.text,
         id: uniqid()
       }
     });
