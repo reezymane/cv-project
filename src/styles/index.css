@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.GeneralFormAndInfo {
+  position: relative;
+  width: 100vw;
+  height: 200px;
+  border: 3px solid #73AD21;
+}
+
+.GeneralForm {
+  position: absolute;
+  background-color: white;
+  display: block;
+}
