@@ -57,10 +57,15 @@ class App extends Component {
     this.handleSchoolChange = this.handleSchoolChange.bind(this);
     this.handleStudyChange = this.handleStudyChange.bind(this);
     this.handleDateStudyChange = this.handleDateStudyChange.bind(this);
+    this.handleCompanyNameChange = this.handleCompanyNameChange.bind(this);
+    this.handleMainTasksChange = this.handleMainTasksChange.bind(this);
+    this.handleDateEmployedChange = this.handleDateEmployedChange.bind(this);
 
     this.onGeneralSubmit = this.onGeneralSubmit.bind(this);
+    this.onEducationalSubmit = this.onEducationalSubmit.bind(this);
 
     this.onGeneralEdit = this.onGeneralEdit.bind(this);
+    this.onEducationalEdit = this.onEducationalEdit.bind(this);
   };
 
   handleNameChange = (event) => {
@@ -113,6 +118,42 @@ class App extends Component {
       dateStudy: {
         text: event.target.value,
         id: this.state.dateStudy.id
+      }
+    })
+  };
+
+  handleCompanyNameChange = (event) => {
+    this.setState({
+      companyName: {
+        text: event.target.value,
+        id: this.state.companyName.id
+      }
+    })
+  };
+
+  handlePositionTitleChange = (event) => {
+    this.setState({
+      positionTitle: {
+        text: event.target.value,
+        id: this.state.positionTitle.id
+      }
+    })
+  };
+
+  handleMainTasksChange = (event) => {
+    this.setState({
+      mainTasks: {
+        text: event.target.value,
+        id: this.state.mainTasks.id
+      }
+    })
+  };
+
+  handleDateEmployedChange = (event) => {
+    this.setState({
+      dateEmployed: {
+        text: event.target.value,
+        id: this.state.dateEmployed.id
       }
     })
   };
