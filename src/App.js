@@ -128,6 +128,12 @@ class App extends Component {
     document.querySelector('.GeneralInfo').style.display = 'none';
     document.querySelector('.GeneralEditButton').style.display = 'none';
   };
+
+  onEducationalEdit = () => {
+    document.querySelector('.EducationalForm').style.display = 'block';
+    document.querySelector('.EducationalInfo').style.display = 'none';
+    document.querySelector('.EducationalEditButton').style.display = 'none';
+  };
   
   render() {
     const {
@@ -210,7 +216,7 @@ class App extends Component {
 
           <Educational school={school} study={study} dateStudy={dateStudy}/>
 
-          <button>Edit</button>
+          <button type='button' className='EducationalEditButton' onClick={this.onEducationalEdit}>Edit</button>
         </div>
 
         <div className='WorkHistoryFormAndInfo'>
