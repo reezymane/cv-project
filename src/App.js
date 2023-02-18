@@ -57,6 +57,7 @@ class App extends Component {
 
   onGeneralSubmit = (event) => {
     event.preventDefault();
+
     this.setState({
       name: {
         text: this.state.name.text,
@@ -71,6 +72,8 @@ class App extends Component {
         id: uniqid()
       }
     });
+
+    document.querySelector('.GeneralForm').style.display = 'none';
   };
   
   render() {
