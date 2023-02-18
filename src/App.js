@@ -181,7 +181,7 @@ class App extends Component {
             <input
              type='text'
              id='school'
-             //onChange={}
+             onChange={this.handleSchoolChange}
              value={school.text}
              /><br />
 
@@ -189,7 +189,7 @@ class App extends Component {
             <input
              type='text'
              id='study'
-             //onChange={}
+             onChange={this.handleStudyChange}
              value={study.text}
              /><br />
 
@@ -197,7 +197,7 @@ class App extends Component {
             <input
              type='text'
              id='dateStudy'
-             //onChange={}
+             onChange={this.handleDateStudyChange}
              value={dateStudy.text}
              /><br />
 
