@@ -204,7 +204,7 @@ class App extends Component {
             <button>Submit</button>
           </form>
 
-          <Educational />
+          <Educational school={school} study={study} dateStudy={dateStudy}/>
 
           <button>Edit</button>
         </div>
