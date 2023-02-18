@@ -119,10 +119,14 @@ class App extends Component {
     });
 
     document.querySelector('.GeneralForm').style.display = 'none';
+    document.querySelector('.GeneralInfo').style.display = 'block';
+    document.querySelector('.GeneralEditButton').style.display = 'block';
   };
 
   onGeneralEdit = () => {
     document.querySelector('.GeneralForm').style.display = 'block';
+    document.querySelector('.GeneralInfo').style.display = 'none';
+    document.querySelector('.GeneralEditButton').style.display = 'none';
   };
   
   render() {
@@ -170,7 +174,7 @@ class App extends Component {
 
           <GeneralInfo name={name} email={email} phone={phone}/>
 
-          <button type='button' className='EditButton' onClick={this.onGeneralEdit}>Edit</button>
+          <button type='button' className='GeneralEditButton' onClick={this.onGeneralEdit}>Edit</button>
         </div>
 
         <div className='EducationalFormAndInfo'>
