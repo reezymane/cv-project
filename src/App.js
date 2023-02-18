@@ -32,6 +32,22 @@ class App extends Component {
       dateStudy: {
         text: '',
         id: uniqid()
+      },
+      companyName: {
+        text: '',
+        id: uniqid()
+      },
+      positionTitle: {
+        text: '',
+        id: uniqid()
+      },
+      mainTasks: {
+        text: '',
+        id: uniqid()
+      },
+      dateEmployed: {
+        text: '',
+        id: uniqid()
       }
     };
 
@@ -43,6 +59,7 @@ class App extends Component {
     this.handleDateStudyChange = this.handleDateStudyChange.bind(this);
 
     this.onGeneralSubmit = this.onGeneralSubmit.bind(this);
+
     this.onGeneralEdit = this.onGeneralEdit.bind(this);
   };
 
@@ -123,6 +140,29 @@ class App extends Component {
     document.querySelector('.GeneralEditButton').style.display = 'block';
   };
 
+  onEducationalSubmit = (event) => {
+    event.preventDefault();
+
+    this.setState({
+      school: {
+        text: this.state.school.text,
+        id: uniqid()
+      },
+      study: {
+        text: this.state.study.text,
+        id: uniqid()
+      },
+      dateStudy: {
+        text: this.state.dateStudy.text,
+        id: uniqid()
+      }
+    });
+
+    document.querySelector('.EducationalForm').style.display = 'none';
+    document.querySelector('.EducationalInfo').style.display = 'block';
+    document.querySelector('.EducationalEditButton').style.display = 'block';
+  };
+
   onGeneralEdit = () => {
     document.querySelector('.GeneralForm').style.display = 'block';
     document.querySelector('.GeneralInfo').style.display = 'none';
@@ -142,7 +182,11 @@ class App extends Component {
       phone,
       school,
       study,
-      dateStudy
+      dateStudy,
+      companyName,
+      positionTitle,
+      mainTasks,
+      dateEmployed
     } = this.state;
 
     return (
@@ -186,7 +230,7 @@ class App extends Component {
         <div className='EducationalFormAndInfo'>
           <p className='EducationalHeading'>Educational Experience</p>
 
-          <form className='EducationalForm'>
+          <form className='EducationalForm' onSubmit={this.onEducationalSubmit}>
             <label htmlFor='school'>School Name:</label><br />
             <input
              type='text'
@@ -211,7 +255,7 @@ class App extends Component {
              value={dateStudy.text}
              /><br />
 
-            <button>Submit</button>
+            <button type='submit'>Submit</button>
           </form>
 
           <Educational school={school} study={study} dateStudy={dateStudy}/>
@@ -221,11 +265,44 @@ class App extends Component {
 
         <div className='WorkHistoryFormAndInfo'>
           <form className='WorkHistoryForm'>
-              <button>Submit</button>
-              <button>Edit</button>
+            <label htmlFor='companyName'>Company Name:</label><br />
+            <input
+             type='text'
+             id='companyName'
+             onChange={this.handleCompanyNameChange}
+             value={companyName.text}
+             /><br />
+
+            <label htmlFor='positionTitle'>Position Title:</label><br />
+            <input
+             type='text'
+             id='positionTitle'
+             onChange={this.handlePositionTitleChange}
+             value={positionTitle.text}
+            /><br />
+
+            <label htmlFor='mainTasks'>Main Tasks:</label><br />
+            <textarea
+             type='text'
+             id='mainTasks'
+             onChange={this.handleMainTasksChange}
+             value={mainTasks.text}
+            /><br />
+
+            <label htmlFor='dateEmployed'>Date of Employment:</label><br />
+            <input
+             type='text'
+             id='dateEmployed'
+             onChange={this.handleDateEmployedChange}
+             value={dateEmployed.text}
+            /><br />
+
+            <button type='submit'>Submit</button>
           </form>
 
           <WorkHistory />
+
+          <button type='button'>Edit</button>
         </div>
       </div>
     );
