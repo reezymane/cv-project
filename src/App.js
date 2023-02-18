@@ -38,6 +38,10 @@ class App extends Component {
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handlePhoneChange = this.handlePhoneChange.bind(this);
+    this.handleSchoolChange = this.handleSchoolChange.bind(this);
+    this.handleStudyChange = this.handleStudyChange.bind(this);
+    this.handleDateStudyChange = this.handleDateStudyChange.bind(this);
+
     this.onGeneralSubmit = this.onGeneralSubmit.bind(this);
     this.onGeneralEdit = this.onGeneralEdit.bind(this);
   };
@@ -65,6 +69,33 @@ class App extends Component {
       phone: {
         text: event.target.value,
         id: this.state.phone.id
+      }
+    })
+  };
+
+  handleSchoolChange = (event) => {
+    this.setState({
+      school: {
+        text: event.target.value,
+        id: this.state.school.id
+      }
+    })
+  };
+
+  handleStudyChange = (event) => {
+    this.setState({
+      study: {
+        text: event.target.value,
+        id: this.state.study.id
+      }
+    })
+  };
+
+  handleDateStudyChange = (event) => {
+    this.setState({
+      dateStudy: {
+        text: event.target.value,
+        id: this.state.dateStudy.id
       }
     })
   };
