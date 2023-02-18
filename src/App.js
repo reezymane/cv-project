@@ -107,10 +107,11 @@ class App extends Component {
               /><br />
 
               <button type='submit'>Submit</button>
-              <button type='button'>Edit</button>
           </form>
 
           <GeneralInfo name={name} email={email} phone={phone}/>
+
+          <button type='button' className='EditButton'>Edit</button>
         </div>
 
         <div className='EducationalFormAndInfo'>
