@@ -226,9 +226,9 @@ class App extends Component {
       }
     });
 
-    document.querySelector('.EducationalForm').style.display = 'none';
-    document.querySelector('.EducationalInfo').style.display = 'block';
-    document.querySelector('.EducationalEditButton').style.display = 'block';
+    document.querySelector('.WorkHistoryForm').style.display = 'none';
+    document.querySelector('.WorkHistoryInfo').style.display = 'block';
+    document.querySelector('.WorkEditButton').style.display = 'block';
   };
 
   onGeneralEdit = () => {
@@ -241,6 +241,12 @@ class App extends Component {
     document.querySelector('.EducationalForm').style.display = 'block';
     document.querySelector('.EducationalInfo').style.display = 'none';
     document.querySelector('.EducationalEditButton').style.display = 'none';
+  };
+
+  onWorkEdit = () => {
+    document.querySelector('.WorkHistoryForm').style.display = 'block';
+    document.querySelector('.WorkHistoryInfo').style.display = 'none';
+    document.querySelector('.WorkEditButton').style.display = 'none';
   };
   
   render() {
