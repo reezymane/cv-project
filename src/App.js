@@ -213,7 +213,7 @@ class App extends Component {
         id: uniqid()
       },
       positionTitle: {
-        text: this.state.spositionTitletudy.text,
+        text: this.state.positionTitle.text,
         id: uniqid()
       },
       mainTasks: {
