@@ -265,6 +265,8 @@ class App extends Component {
 
     return (
       <div className="App">
+        <header>CV Application</header>
+        
         <div className='GeneralFormAndInfo'>
           <p className='GeneralHeading'>General Information</p>
 
