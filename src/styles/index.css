@@ -13,7 +13,8 @@ code {
 }
 
 .GeneralFormAndInfo,
-.EducationalFormAndInfo {
+.EducationalFormAndInfo,
+.WorkHistoryFormAndInfo {
   position: relative;
   width: 100vw;
   height: 200px;
@@ -21,7 +22,8 @@ code {
 }
 
 .GeneralForm,
-.EducationalForm {
+.EducationalForm,
+.WorkHistoryForm {
   position: absolute;
   display: block;
 }
@@ -29,6 +31,8 @@ code {
 .GeneralInfo,
 .GeneralEditButton,
 .EducationalInfo,
-.EducationalEditButton {
+.EducationalEditButton,
+.WorkInfo,
+.WorkEditButton {
   display: none;
 }
