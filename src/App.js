@@ -227,7 +227,7 @@ class App extends Component {
     });
 
     document.querySelector('.WorkHistoryForm').style.display = 'none';
-    document.querySelector('.WorkHistoryInfo').style.display = 'block';
+    document.querySelector('.WorkInfo').style.display = 'block';
     document.querySelector('.WorkEditButton').style.display = 'block';
   };
 
@@ -245,7 +245,7 @@ class App extends Component {
 
   onWorkEdit = () => {
     document.querySelector('.WorkHistoryForm').style.display = 'block';
-    document.querySelector('.WorkHistoryInfo').style.display = 'none';
+    document.querySelector('.WorkInfo').style.display = 'none';
     document.querySelector('.WorkEditButton').style.display = 'none';
   };
   
