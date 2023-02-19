@@ -204,6 +204,33 @@ class App extends Component {
     document.querySelector('.EducationalEditButton').style.display = 'block';
   };
 
+  onWorkSubmit = (event) => {
+    event.preventDefault();
+
+    this.setState({
+      companyName: {
+        text: this.state.companyName.text,
+        id: uniqid()
+      },
+      positionTitle: {
+        text: this.state.spositionTitletudy.text,
+        id: uniqid()
+      },
+      mainTasks: {
+        text: this.state.mainTasks.text,
+        id: uniqid()
+      },
+      dateEmployed: {
+        text: this.state.dateEmployed.text,
+        id: uniqid()
+      }
+    });
+
+    document.querySelector('.EducationalForm').style.display = 'none';
+    document.querySelector('.EducationalInfo').style.display = 'block';
+    document.querySelector('.EducationalEditButton').style.display = 'block';
+  };
+
   onGeneralEdit = () => {
     document.querySelector('.GeneralForm').style.display = 'block';
     document.querySelector('.GeneralInfo').style.display = 'none';
@@ -305,7 +332,7 @@ class App extends Component {
         </div>
 
         <div className='WorkHistoryFormAndInfo'>
-          <form className='WorkHistoryForm'>
+          <form className='WorkHistoryForm' onSubmit={this.onWorkSubmit}>
             <label htmlFor='companyName'>Company Name:</label><br />
             <input
              type='text'
@@ -341,9 +368,9 @@ class App extends Component {
             <button type='submit'>Submit</button>
           </form>
 
-          <WorkHistory />
+          <WorkHistory companyName={companyName} positionTitle={positionTitle} mainTasks={mainTasks} dateEmployed={dateEmployed}/>
 
-          <button type='button'>Edit</button>
+          <button type='button' className='WorkEditButton' onClick={this.onWorkEdit}>Edit</button>
         </div>
       </div>
     );
